@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    & > body{
+        margin: 0;
+        padding-inline: 1rem;
+        & > form{
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: 0 auto;
+            height: 100dvh;
+
+            .heading{
+                font-size: 2.5rem;
+            }
+
+            & > label{
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: .2rem;
+            }
+
+            & > input,
+            & > textarea{
+                padding: 1rem;
+                font-size: 1.5rem;
+                border-radius: .5rem;
+                outline: none;
+                border: none;
+                background-color: #576574;
+                color: white;
+                margin-bottom: 2rem;
+
+                &::placeholder{
+                    color: whitesmoke;
+                }
+            }
+
+            & > textarea{
+                resize: none;
+                field-sizing: content;
+                flex-grow: 1;
+                margin-bottom: 0;
+                min-height: min-content
+            }
+
+            .btns{
+                margin-block: 1rem;
+                & > button{
+                    outline: none;
+                    border: none;
+                    padding: .8rem 1rem;
+                    border-radius: .5rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+
+                    &:first-child{
+                        background-color: #576574;
+                        color: white;
+                        margin-right: .5rem;
+
+                        &:hover{
+                            background-color: hsl(from #576574 h s l / .8);
+                        }
+                    }
+
+                    &:last-child{
+                        background-color: #2e86de;
+                        color: white;
+
+                        &:hover{
+                            background-color: hsl(from #2e86de h s l / .8);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

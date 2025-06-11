@@ -1,0 +1,30 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2xhaW5lIiwiaWF0IjoxNzQ3Njc4Mjg4LCJleHAiOjE3NDc2NzgzMDN9.D7c8dCXsWS7RfgXTcugFPynK-SBbN_THXcBrxcmXbQc
+
+###
+
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2xhaW5lIiwiaWF0IjoxNzQ3Njc4MjU0fQ.4ABlUCey_AUkrIvZBXDhy5rjy8ii9rA4Bte3znwvYco"
+}
+
+###
+
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username": "Slaine",
+    "title": "re-zero"
+}
+
+###
+
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2xhaW5lIiwiaWF0IjoxNzQ3Njc4MjU0fQ.4ABlUCey_AUkrIvZBXDhy5rjy8ii9rA4Bte3znwvYco"
+}

@@ -1,0 +1,58 @@
+const dotenv = require("dotenv")
+const express = require("express");
+const jwt = require("jsonwebtoken");
+
+dotenv.config();
+
+const app = express();
+app.use(express.json())
+
+const port = process.env.PORT || 3000;
+
+const posts = [
+    {
+        username: "Slaine",
+        title: "post 1"
+    },
+    {
+        username: "Inaho",
+        title: "aldnoah"
+    }
+]
+
+const accessTokens = []
+
+app.get("/posts", authenticate, (req, res) => {
+    return res.json(posts.filter((post) => post.username === req.user.name))
+})
+
+app.post("/login", (req, res) => {
+    const username = req.body.username;
+    const user = { name: username };
+    const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
+    const accessToken = generateAccessToken(user);
+    return res.json({accessToke, refreshToken})
+})
+
+app.listen(port, (err) => {
+    if(err){
+        console.log(`Server error ${err.message}`)
+    }
+    console.log(`Server is listening on port ${process.env.PORT}`)
+})
+
+
+function generateAccessToken(user){
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "15s"})
+}
+
+// function authenticate(req, res, next){
+//     const authHeader = req.headers["authorization"];
+//     const token = authHeader && authHeader.split(" ")[1];
+//     if(token === null) return res.sendStatus(401);
+//     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+//         if(err) return res.sendStatus(403);
+//         req.user = user;
+//         next()
+//     })
+// }

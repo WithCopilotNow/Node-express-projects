@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/article.css" type="text/css">
+</head>
+<body>
+    <article class="article-container">
+        <section class="article-heading">
+            <div>
+                <h1 class="title"><%= locals.article.title %></h1>
+                <p class="timestamp"><%= locals.article.dateFormat %></p>
+            </div>
+        </section>
+        <section class="article-content">
+            <div>
+                <p class="description"><%= locals.article.description %></p>
+                <p class="articleBody"><%= locals.article.articleBody %></p>
+            </div>
+        </section>
+        <div class="navigation">
+            <form action="/articles" method="get">
+                <button type="submit">All Articles</button>
+            </form>
+            <form action="/articles/<%= locals.article.serializeTitle %>%20<%= locals.article.id %>/edit" method="get">
+                <button type="submit">Edit</button>
+            </form>
+        </div>
+    </article>
+</body>
+</html>

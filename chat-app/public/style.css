@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    & > body{
+        margin: 0;
+        & > main{
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            .message-history{
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                padding: 1rem;
+
+                & > div{
+                    background-color: #2f3640;
+                    padding: 1rem;
+                    color: white;
+                    font-size: 1.5rem;
+                    border-radius: .5rem;
+                    align-self: flex-start;
+                    &.self{
+                        align-self: flex-end;
+                    }
+                    &.center{
+                        align-self: center;
+                    }
+                }
+            }
+            .message-container{
+                position: static;
+                bottom: 0;
+                & > form{
+                    margin: 0 auto;
+                    max-width: 1000px;
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    padding: 1rem;
+                    & > label{
+                        font-size: 2rem;
+                    }
+                    & > input{
+                        padding: .8rem 1rem;
+                        flex-grow: 1;
+                        font-size: 1.5rem;
+                        border-radius: .5rem;
+                        background-color: #2f3640;
+                        color: white;
+
+                        &::placeholder{
+                            color: white;
+                        }
+                    }
+
+                    & > button{
+                        padding: 1rem 1.5rem;
+                        font-size: 1.5rem;
+                        border-radius: .5rem;
+                        background-color: #16a085;
+                        color: white;
+                        border: none;
+                        outline: none;
+
+                        &:hover{
+                            background-color: #1abc9c;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

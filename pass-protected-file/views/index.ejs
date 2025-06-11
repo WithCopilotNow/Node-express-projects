@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if(locals.fileUrl != null) { %>
+        <div style="max-width: 500px; margin: 0 auto;">
+            <strong>Your file is upload</strong>
+            <a href="<%= locals.fileUrl %>"><%= locals.fileUrl %></a>
+        </div>
+    <% } %>
+    <form action="/upload" method="post" enctype="multipart/form-data" style="max-width: 500px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: .3rem .5rem;">
+        <label for="file">File:</label>
+        <input type="file" name="file" id="file" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password", id="password" placeholder="Enter password">
+        <button type="submit" style="grid-column: span 2;">Upload</button>
+    </form>
+</body>
+</html>

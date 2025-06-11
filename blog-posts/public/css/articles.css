@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    & > body{
+        margin: 0;
+        padding-inline: 1rem;
+        & > section{
+            .heading{
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+
+                & > h1{
+                    font-size: 2.5rem;
+                }
+
+                .newArticleBtn{
+                    display: inline-block;
+                    padding: .8rem 1rem;
+                    background-color: #16a085;
+                    color: white;
+                    border-radius: .5rem;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    margin-left: auto;
+
+                    &:hover{
+                        background-color: hsl(from #16a085 h s l / .8);
+                    }
+                }
+            }
+            .article-grid{
+                margin: 0 auto;
+                max-width: 1200px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(580px, 1fr));
+                gap: 1.5rem;
+
+                .article-container{
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #576574;
+                    color: white;
+                    box-shadow: 0 0 .3rem 0 #576574;
+                    border-radius: .5rem;
+                    padding: 1.5rem;
+                    .title{
+                        font-size: 1.6rem;
+                        margin-block: .5rem;
+                    }
+                    .timestamp{
+                        margin: 0;
+                        color: whitesmoke;
+                    }
+                    .description{
+                        margin-block: .5rem;
+                        font-size: 1.2rem;
+                    }
+                    .navigation{
+                        display: flex;
+                        gap: .5rem;
+                        margin-top: .5rem;
+                        & > form{
+                            & > button{
+                                padding: .8rem 1rem;
+                                font-size: 1rem;
+                                border-radius: .5rem;
+                                border: none;
+                                outline: none;
+                                cursor: pointer;
+                            }
+                            &:nth-child(1){
+                                & > button{
+                                    background-color: #2e86de;
+                                    color: white;
+        
+                                    &:hover{
+                                        background-color: hsl(from #2e86de h s l / .8);
+                                    }
+                                }
+                            }
+
+                            &:nth-child(2){
+                                & > button{
+                                    background-color: #27ae60;
+                                    color: white;
+        
+                                    &:hover{
+                                        background-color: hsl(from #27ae60 h s l / .8);
+                                    }
+                                }
+                            }
+
+                            &:nth-child(3){
+                                & > button{
+                                    background-color: #ee5253;
+                                    color: white;
+        
+                                    &:hover{
+                                        background-color: hsl(from #ee5253 h s l / .8);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

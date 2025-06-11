@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    & > body{
+        margin: 0;
+        .article-container{
+            .article-heading{
+                background-color: #0D132D;
+                & > div{
+                    max-width: 900px;
+                    color: white;
+                    margin: 0 auto;
+                    text-align: center;
+                    padding: 2rem 1rem;
+                    .title{
+                        font-family: Georgia, 'Times New Roman', Times, serif;
+                        font-weight: 500;
+                        font-size: 3rem;
+                        text-wrap: balance;
+                    }
+                    .timestamp{
+                        margin-top: 2.5rem;
+                    }
+                }
+            }
+            .article-content{
+                & > div{
+                    max-width: 900px;
+                    margin: 0 auto;
+                    padding-inline: 1rem;
+
+                    .description{
+                        padding: 2rem 1rem;
+                        font-size: 1.4rem;
+                    }
+                    .articleBody{
+                        white-space: pre-wrap;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            .navigation{
+                max-width: 900px;
+                margin: 0 auto;
+                display: flex;
+                gap: .5rem;
+                padding: 1rem;
+                & > form{
+                    & > button{
+                        padding: .8rem 1rem;
+                        font-size: 1rem;
+                        border-radius: .5rem;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                    &:nth-child(1){
+                        & > button{
+                            background-color: #2e86de;
+                            color: white;
+        
+                            &:hover{
+                                background-color: hsl(from #2e86de h s l / .8);
+                            }
+                        }
+                    }
+        
+                    &:nth-child(2){
+                        & > button{
+                            background-color: #27ae60;
+                            color: white;
+        
+                            &:hover{
+                                background-color: hsl(from #27ae60 h s l / .8);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
