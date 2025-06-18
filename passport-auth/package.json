@@ -1,16 +1,15 @@
 {
-  "name": "passport-auth",
+  "name": "passport",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "devStart": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon --exec node --inspect --experimental-strip-types src/app.ts"
+  },
   "dependencies": {
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
@@ -18,11 +17,18 @@
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
-    "mongoose": "^8.15.0",
+    "mongoose": "^8.15.2",
     "passport": "^0.7.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "zod": "^3.25.64"
   },
   "devDependencies": {
+    "@types/connect-flash": "^0.0.40",
+    "@types/express": "^5.0.3",
+    "@types/express-session": "^1.18.2",
+    "@types/node": "^24.0.1",
+    "@types/passport": "^1.0.17",
+    "@types/passport-local": "^1.0.38",
     "nodemon": "^3.1.10"
   }
 }
